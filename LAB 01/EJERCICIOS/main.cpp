@@ -1,6 +1,38 @@
 #include <iostream>
-
+#include <cstdlib>
+#include <ctime>
 using namespace std;
+
+
+int ejercicio4();
+int ejercicio6();
+int ejercicio8();
+int ejercicio10();
+int ejercicio12();
+int ejercicio14();
+int ejercicio16();
+int ejercicio18();
+int ejercicio20();
+int ejercicio22();
+int ejercicio24();
+int ejercicio30();
+
+int main()
+{
+    ejercicio4();
+    ejercicio6();
+    ejercicio8();
+    ejercicio10();
+    ejercicio12();
+    ejercicio14();
+    ejercicio16();
+    ejercicio18();
+    ejercicio20();
+    ejercicio22();
+    ejercicio24();
+
+    return 0;
+}
 
 int ejercicio4()
 {
@@ -63,14 +95,14 @@ int ejercicio12()
             P+=N;
         }
         cout << N <<" ^ "<< i << "=" << P << endl;
-        return 0;
     }
+    return 0;
 }
 
 int ejercicio14()
 {
     for (int A= 1, B= 50; A<= 50;A++, B--){
-        cout<< A << "            "<< B<< ENDL;
+        cout<< A << "            "<< B<< endl;
     }
     return 0;
 }
@@ -93,10 +125,31 @@ int ejercicio16()
     return 0;
 }
 
+int ejercicio18()
+{
+    int N;
+    bool C=false;
+    cout <<"INGRESE UN NUMERO: ";
+    cin>>N;
+    for (int i = 0;i * i <= N; i++){
+        if (i*i ==N ){
+            C=true;
+            break;
+        }
+    }
+    if (C){
+        cout<< N<< "Es un cuadrado perfecto: ";
+    }
+    else
+        cout<<N<< "NO es un cuadrado perfecto: ";
+    return 0;
+}
+
+
 int ejercicio20()
 {
     int N, A, B = 0;
-    cout << "Ingrese un número: ";
+    cout << "Ingrese un numero: ";
     cin >> N;
     A = N;
     while (N > 0) {
@@ -104,9 +157,9 @@ int ejercicio20()
         N /= 10;
     }
     if (A == B) {
-        cout << A << " es un número palíndromo." << endl;
+        cout << A << " es un numero palindromo." << endl;
     } else {
-        cout << A << " NO es un número palíndromo." << endl;
+        cout << A << " NO es un numero palindromo." << endl;
     }
     return 0;
 }
@@ -121,5 +174,43 @@ int ejercicio22()
     int m= segundos/60;
     segundos%=60;
     cout << hr << ":"<<m << ":"<< segundos << endl;
+    return 0;
+}
+/*
+int ejercicio24()
+{
+    int n;
+    cout<<"Ingrese el tamaño del cuadrado: ";
+    cin >> n;
+
+    for(int i=1; i<=n; i++){
+        for (int l=1; l<=;1++){
+            cout<<"+";
+        }
+    }
+}
+/*
+
+*/
+int ejercicio30()
+{
+    int A = rand() % 101;
+    int B;
+    int C = 0;
+    srand(time(NULL));
+
+    cout << "ADIVINA UN NUMERO ENTRE 0 Y 100" << endl;
+    do {
+        cout << "INGRESE UN NUMERO: ";
+        cin >> B;
+        C++;
+        if (B < A) {
+            cout << "El número es mayor." << endl;
+        } else if (B > A) {
+            cout << "El número es menor." << endl;
+        }
+    } while (B != A);
+    cout << "Adivinaste el numero " << A
+         << " en " << C << " intentos." << endl;
     return 0;
 }
